@@ -5,31 +5,16 @@ spring:
   application:
     name: config-test-service
 
+ #test priority of ymls
   datasource:
-    url: jdbc:mysql://localhost:3306/admin_db
-    username: root
-    password: 1q2w3e4r
+    url: jdbc:test-priority-of-ymls
+    username: this will be
+    password: overridden
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        format_sql: true
+# deleted euereka config
 
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8516/eureka/
-
-#set log level
+# set log level only on this file
 logging:
   level:
     root: debug
