@@ -5,15 +5,6 @@ spring:
   application:
     name: config-test-service
 
- #test priority of ymls
-  datasource:
-    url: jdbc:test-priority-of-ymls
-    username: this will be
-    password: overridden
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-# deleted euereka config
-
 # set log level only on this file
 logging:
   level:
@@ -21,3 +12,8 @@ logging:
     org.hibernate.validator: debug
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
+
+# test encryption / decryption
+test:
+  secret: "{cipher}AQCLnZ3+nD8/YWOD/TcE5mykZoGgdJ4Si5jqdMOeiZQW4+k6XJlNe2YC7okR6DDB3lQvSbIBUWQ7dCw+XbE1CSG38AOEi2WIzWslEd0l3caLJp3A6CsPeLY3HGnUDCwHlyFLQLd1mV9hhibGiKgXCtQZYQ1mxPeYJ70arGTMODjnaO8Hbc883WxL+UHTEqyBWjrv7gMbTXbx7J6Ocd+FwToG6wVilH4MTvm6DegHbBWXpW95kSJMTqoYoWo8JmndZvJ3R9IsBD56X42WK0h6d6S3Rf9zOf1V63FSZS0u+Ady/ePr+DdBrA3/58sUNXyqWLkFSZsru4+MssCMKlJ3ysmPiv3bkDRDgdc+9H5FLXwbeNp6jp+DOq6vEIOUWwAsbG8="
+
