@@ -2,17 +2,17 @@
 
 Server:
   port: ${MEMBER_PORT}
-
 spring:
   application:
     name: member-service
+
   config:
     import:
-      - "configserver:jwt.yml"
-      - "configserver:redis.yml"
-      - "configserver:kafka-local.yml"
-      - "configserver:eureka.yml"
-      - "configserver:logging-info.yml"
+      - configserver:jwt.yml
+      - configserver:redis.yml
+      - configserver:kafka-local.yml
+      - configserver:eureka.yml
+      - configserver:logging-info.yml
 
   datasource:
     url: jdbc:mysql://localhost:3306/member_db
