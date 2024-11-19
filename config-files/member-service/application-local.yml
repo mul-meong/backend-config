@@ -1,0 +1,65 @@
+# Local
+
+Server:
+  port: 25671
+
+spring:
+  application:
+    name: member-service
+
+  data:
+    redis:
+      lettuce:
+        pool:
+          max-active: 10 # 최대로 연결 가능한 수 (최대 동시 요청 처리량을 관리)
+          max-idle: 10 # 유휴 상태에서 유지할 수 있는 최대 연결 수 (연결을 재사용함으로써->새로운 연결을 생성하는 비용을 줄임)
+          min-idle: 2 # 항상 유지할 최소 유휴 연결 수 (갑작스러운 부하에 대한 대응)
+      host: "{cipher}ca9a8f9c2411856993261468371f76cb789d803b3a1d799310535dc72e03281a"
+      port: 7379
+      password: "{cipher}710142fef4d9b369d5d250abad029544616dae3b0237c2fedf059b0af60a27c5"
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/member_db
+    username: root
+    password: 1q2w3e4r
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+  kafka:
+    bootstrap-servers: localhost:29092, localhost:39092, localhost:49092
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8516/eureka/
+
+jwt:
+  secretKey: "{cipher}2e0b184b32e5ff707de16177334bdc9322e2be7e6bcccf99ddac6074f57938303af5d752f54a6c5a17209eca67bc8966e32585ef8ea31140a0e55f5fbc6ecdcc2d33f6489db73cd770226a4a1a6cf5c892c4452601abccda3d078e05fbd70fc2"
+  issuer: "{cipher}6bf2ac35a3a86f6ff28f10eb696b6615e9e2064495de9a0dc2fd578873be391eed46bcd4574cf224b156807dc38467c5"
+  accessExpireTime: 36000000 # 10 hours
+  refreshExpireTime: 604800000 # 7 days
+  tokenPrefix: "Bearer "
+  accessTokenPrefix: "Authorization"
+  refreshTokenPrefix: "X-Refresh-Token"
+
+#set log level
+logging:
+  level:
+    root: info
+    org.hibernate.validator: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+
+
