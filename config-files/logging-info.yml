@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: info
+    org.hibernate.validator: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5levexl %logger{36} - %msg%n"

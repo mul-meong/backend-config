@@ -1,0 +1,22 @@
+datasource:
+  username: "{cipher}AQCrHVYDfpFZpFsqWKWemhIEHbZQ6ETNCLxN2nRv4qK3H04MUdfKYZ7PLF1xrE9+cQqUGRlQ1eRqqDvpf0bKLHS3hYr3+Y6P8Grq3EuRfIsmvri07msVK4eltepseqxBct2+8wK2OuG5JvoC0p+eDD/kB/cDtGRNv0kYxn/WyIOy+SnCpwH1ocMmV5E1W3kgVRhDp8eEs/D+ook8ipZhZLIGyTUcU4DOUTjup1RzDVKuB10BDoue0jeOVJG6EpV+w1CSaGY04V4ngS8KfjrHnB9Sw7UZYT6fT/N1v9kQrv3na3WAHA0Veh3qXxvArDlADrJ4jHAEYtOYee5s0K5LBGHxUB+x/gzdqtCjs5BznNb+/1URs3oAHDVBrM2Bjs8MdpM="
+  password: "{cipher}AQCihsy0hAYEZCEkvltkWGylt4MlVdGFsOi7BNDDuQbCFq2gMiZ5nKCfGCR0y3aoXl96pNgT7bFFkFncPNPxOwX7aGN/5yR5kRfAuf3Ng9svxtgpApL6iVNq3RVA9x2fwFdDVFQctO0mlPCryvP2F+x0aYG83eguMvqMiRAtGtM4vqlnXQ2G/KtKwn1nQ5e79E0W9201MkssrX+CyVzLm+JzOE4PlOxSw0jvEucFh/bsAY6gAXcjpEuWHwdMlpaSmVTb/ih9LKHJau6dsASPFLy0ifhFiKuOEEDdl2tkehQBGcDCa9L9qzscB8NLpN4lqVwWPJyD0whv2BXWEwJUzobOTgmK2ToUWWyNm3HNVkNv/2zvjGe8vQkBPjg490+qoIHv7/hsz6nU07u3LgMgIbdH"
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+  member:
+    url: jdbc:mysql://qua-rdb/member_db
+  admin:
+    url: jdbc:mysql://qua-rdb/admin_db
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+
+
+
+

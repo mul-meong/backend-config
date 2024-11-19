@@ -1,0 +1,10 @@
+data:
+  redis:
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+    host: "{cipher}AQCp5gbZmMJj0JKA/TrkXvoWWSTba5dF5pvvAP8qYfzNWn4Ly2nJawTGQbmhYK+HOScYzw7FBnw0x3CFjEhOLfbFVo8WmFd2Dz5idFCCq8WyZXUSEnsoRuhepoa0bioENnoVlxFfCGyFhJAPb+gAoArQkXLtwOP3puTJyTgeCnGHoE83jIPvq31o09aGdwKH+FanKCASthRn3IX3qDaRtgg17ogKMgiGdSE/SVKz21K+PBrue7uuLkiCMB8gM0zNDbaZVTTsg5WWmGGJRUMzEtMcqNYLk+apJAn7WB3Cpiu3vjbnpu+QkA3p6iOCJub25Qg5cKlQl4xkddfwvDvypHGmopmi6URrpcRMA4ge7ud9cbhgG+fUhY36M6Imuy/ydYs="
+    port: "{cipher}AQBd4EPxlG1HEVhQzE3h3FtPjfQwYNJvE/xOYeBUo76MPmD97rEiwlN/mt1lGS2IPI8hTIWkNLuxVjyiX+yVl20gMtepQGdwdzn4vXousIpX555W2sdphN2cFZ+6Y9eRy4paIEsN+ijFPWarcTTYjCX83reoJ8zqQzLukyF91OdK2iMuQGKOy25Qxv5PQpMDkS/H35XOzz6fvjqyl60NekujvDabKrf7GtOTvlIbRPdugKupOlKDUIkUdtKMLsKjiew8/c+KR+WA4ssfHFtiRpjHY4lq88C8xtc/NW2LPKn7zfd+XvgRQNmMTJ4x2G8MRizl/lwNB6rEDgZzdJVWtlGA+8zk1YtyaiAPvuUM5H4foofXEWI51k+1QyVjUqTW4JU="
+    password: "{cipher}AQC1Al0+MKuA1d+6MtruG4JBUgQik5RjmnBCh8P3rm1t2cOowhEBbOndk1UHmJ7TnD1KFxmowgva5EHO5OqvTW6l89eeF/0ilyFMPbhwQe6/CTQIuWyMOvCPt3l/w+adJg81vmGxwfGsC1ytZ4+MppTKQgyPgm8RPGFw2bT9/wklLNk2dL1k+NhKyq5xVDUD9CWKblt4K9N9ad7xq9HpWHqna1y8n0xm5yMFlL/0dFZX24G/UzKuO2+0pUC4/h9CnHfk7Pu0PD0ukTH1lXNBtWGK7/znffznnrl/gQ8G/B3aYrzZKNkq2QvJ8ZPgGdo9eQWTx/2ZNhRQ70U15cZDas1jMWpZZxGTF+o4PTP/sT0Q77z3VQgs2STGWdve02o8ZMs="

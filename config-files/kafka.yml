@@ -1,0 +1,5 @@
+# Kafka
+kafka:
+  bootstrap-servers: kafka-1, kafka-2, kafka-3
+  consumer:
+    group-id: member-read

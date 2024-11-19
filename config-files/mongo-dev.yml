@@ -1,0 +1,9 @@
+data:
+  mongodb:
+    member:
+      uri: mongodb://mongo-primary:${MONGO_PRIMARY_PORT},mongo-secondary1:${MONGO_SECONDARY_PORT_1},mongo-secondary2:${MONGO_SECONDARY_PORT_2}/member_read_db?replicaSet=rs0&authSource=admin
+    feed:
+      uri: mongodb://mongo-primary:${MONGO_PRIMARY_PORT},mongo-secondary1:${MONGO_SECONDARY_PORT_1},mongo-secondary2:${MONGO_SECONDARY_PORT_2}/feed_read_db?replicaSet=rs0&authSource=admin
+    comment:
+      uri: mongodb://mongo-primary:${MONGO_PRIMARY_PORT},mongo-secondary1:${MONGO_SECONDARY_PORT_1},mongo-secondary2:${MONGO_SECONDARY_PORT_2}/comment_read_db?replicaSet=rs0&authSource=admin
+
