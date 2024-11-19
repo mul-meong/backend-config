@@ -1,0 +1,141 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        ### MEMBER-SERVICE ###
+        - id: member-service  # 서비스 이름
+          uri: lb://MEMBER-SERVICE # 로드밸런서: MEMBER-SERVICE 서비스로 요청 라우팅(Eureka에 등록된 서비스 이름)
+          predicates:
+            - Path=/member-service/** # ({port}/member-service/**)로 들어오는 요청을 라우팅
+          filters:
+            - StripPrefix=1 # /**-service/api/v1 -> /api/v1로 변경(첫번째 세그먼트 제거)
+
+        # JWT Needed
+        - id: member-service
+          uri: lb://MEMBER-SERVICE
+          predicates:
+            - Path=/member-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        ### FEED-SERVICE ###
+        - id: feed-service
+          uri: lb://FEED-SERVICE
+          predicates:
+            - Path=/feed-service/**
+          filters:
+            - StripPrefix=1 #
+
+        # JWT Needed
+        - id: feed-service
+          uri: lb://FEED-SERVICE
+          predicates:
+            - Path=/feed-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        ### COMMENT-SERVICE ###
+        - id: comment-service
+          uri: lb://COMMENT-SERVICE
+          predicates:
+            - Path=/comment-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: comment-service
+          uri: lb://COMMENT-SERVICE
+          predicates:
+            - Path=/comment-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        ### UTILITY-SERVICE ###
+        - id: utility-service
+          uri: lb://UTILITY-SERVICE
+          predicates:
+            - Path=/utility-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: utility-service
+          uri: lb://UTILITY-SERVICE
+          predicates:
+            - Path=/utility-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        ### ADMIN-SERVICE ###
+        - id: admin-service
+          uri: lb://ADMIN-SERVICE
+          predicates:
+            - Path=/admin-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: admin-service
+          uri: lb://ADMIN-SERVICE
+          predicates:
+            - Path=/admin-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        ### Member-Read-SERVICE ###
+        - id: member-read-service
+          uri: lb://MEMBER-READ-SERVICE
+          predicates:
+            - Path=/member-read-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: member-read-service
+          uri: lb://MEMBER-READ-SERVICE
+          predicates:
+            - Path=/member-read-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+          ### Comment-Read-SERVICE ###
+        - id: comment-read-service
+          uri: lb://COMMENT-READ-SERVICE
+          predicates:
+            - Path=/comment-read-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: comment-read-service
+          uri: lb://COMMENT-READ-SERVICE
+          predicates:
+            - Path=/comment-read-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+          ### Contest-Service#
+        - id: contest-service
+          uri: lb://CONTEST-SERVICE
+          predicates:
+            - Path=/contest-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: contest-service
+          uri: lb://CONTEST-SERVICE
+          predicates:
+            - Path=/contest-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        ### -SERVICE ###
