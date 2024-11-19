@@ -20,9 +20,10 @@ spring:
 
   config:
     import:
-    - optional:classpath:/gateway-config.yml
-    - optional:classpath:/routes-config.yml
-    - optional:classpath:/swagger-config.yml
+    - classpath:/gateway-config.yml
+    - classpath:/routes-config.yml
+    - classpath:/swagger-config.yml
+    - classpath:/event-topics.yml
 
 jwt:
   secretKey: "{cipher}d41a1773631d457e42d09501b90c1c968a440c7283ea98dd6f81efd2c982ed138229bce5d135777673e4fb1bf0021c32715727e13622ad1474f558a9c79a2d503dd56b3f575fd42e169e5850c9daf885cf8f4f03d4b3cc6c4f4571dc57acf04d"
