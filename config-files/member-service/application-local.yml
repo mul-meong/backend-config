@@ -15,7 +15,7 @@ spring:
           max-idle: 10
           min-idle: 2
       host: "{cipher}ca9a8f9c2411856993261468371f76cb789d803b3a1d799310535dc72e03281a"
-      port: 6379
+      port: 7379
       password: "{cipher}710142fef4d9b369d5d250abad029544616dae3b0237c2fedf059b0af60a27c5"
 
   datasource:
