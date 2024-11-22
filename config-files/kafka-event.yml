@@ -1,0 +1,21 @@
+# Kafka Event 설정 파일
+## 이 파일에서 중앙으로 관리하고, 각 서비스에서는 이 파일을 참조하여 Kafka Event를 사용합니다.
+### 이벤트를 발행시에는 다른 서비스에서 구독할 수 있도록 본 파일에 이벤트를 추가하여주세요.
+
+event:
+  # Member 도메인
+  member:
+    pub:
+      topics:
+        member-create: # event
+          name: member-created
+          dto : MemberCreateEvent # 이름 참고용 DTO, 세부 필드는 Figma 참고
+        nickname-update: # 회원 닉네임 수정시 발생(명확하다면 아래에서부터는 생략)
+          name: nickname-updated
+          dto: MemberNicknameUpdateEvent
+        profile-img-update:
+          name: profile-img-update
+          dto: MemberProfileImgUpdateEvent
+    sub: # member-read-service
+      group-id: member-read-group
+  # 아래에 각자 도메인에 맞게 추가해주세요.
