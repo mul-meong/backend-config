@@ -2,10 +2,10 @@ name: Spring Boot CI/CD
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    types: [ closed ]
-    branches: [ main ]
+    branches:
+      - main
+    paths-ignore:
+      - 'config-files/**'
 
 jobs:
   build_and_deploy:
