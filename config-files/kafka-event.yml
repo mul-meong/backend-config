@@ -20,3 +20,25 @@ event:
     sub: # member-read-service
       group-id: ${spring.profiles.active:default}-member-read-group
   # 아래에 각자 도메인에 맞게 추가해주세요.
+
+  # Feed 도메인
+  feed:
+    pub:
+      topics:
+        feed-create:
+          name: ${spring.profiles.active:default}-feed-created
+          dto: CreateFeedEvent
+        feed-delete:
+          name: ${spring.profiles.active:default}-feed-deleted
+          dto: DeleteFeedEvent
+        feed-update:
+          name: ${spring.profiles.active:default}-feed-updated
+          dto: UpdateFeedEvent
+        feed-hashtag-update:
+          name: ${spring.profiles.active:default}-feed-hashtag-updated
+          dto: UpdateFeedHashtagEvent
+        feed-status-update:
+          name: ${spring.profiles.active:default}-feed-status-updated
+          dto: UpdateFeedStatusEvent
+    sub:  # feed-read-service
+      group-id: ${spring.profiles.active:default}-feed-read-group
