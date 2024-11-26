@@ -104,6 +104,23 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
+        ### Feed-Read-SERVICE ###
+        - id: feed-read-service
+          uri: lb://FEED-READ-SERVICE
+          predicates:
+            - Path=/feed-read-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: feed-read-service
+          uri: lb://FEED-READ-SERVICE
+          predicates:
+            - Path=/feed-read-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
           ### Comment-Read-SERVICE ###
         - id: comment-read-service
           uri: lb://COMMENT-READ-SERVICE

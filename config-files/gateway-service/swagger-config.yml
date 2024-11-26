@@ -18,6 +18,8 @@ springdoc:
         name: "Admin Service API"
       - url: "/member-read-service/v3/api-docs"
         name: "Member Read Service API"
+      - url: "/feed-read-service/v3/api-docs"
+        name: "Feed Read Service API"
       - url: "/comment-read-service/v3/api-docs"
         name: "Comment Read Service API"
       - url: "/contest-service/v3/api-docs"
