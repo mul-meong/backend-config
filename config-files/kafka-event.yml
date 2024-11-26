@@ -64,23 +64,23 @@ event:
         feed-recomment-delete: # event
           name: ${spring.profiles.active:default}-feed-recomment-deleted
           dto: FeedRecommentDeleteEvent
-        short-comment-create: # event
+        shorts-comment-create: # event
           name: ${spring.profiles.active:default}-short-comment-created
-          dto: ShortCommentCreateEvent 
-        short-comment-update: # event
+          dto: ShortsCommentCreateEvent 
+        shorts-comment-update: # event
           name: ${spring.profiles.active:default}-short-comment-updated
-          dto: ShortCommentUpdateEvent
-        short-comment-delete: # event
+          dto: ShortsCommentUpdateEvent
+        shorts-comment-delete: # event
           name: ${spring.profiles.active:default}-short-comment-deleted
-          dto: ShortCommentDeleteEvent
-        short-recomment-create: # event
+          dto: ShortsCommentDeleteEvent
+        shorts-recomment-create: # event
           name: ${spring.profiles.active:default}-short-recomment-created
-          dto: ShortRecommentCreateEvent
-        short-recomment-update: # event
+          dto: ShortsRecommentCreateEvent
+        shorts-recomment-update: # event
           name: ${spring.profiles.active:default}-short-recomment-updated
-          dto: ShortRecommentUpdateEvent
-        short-recomment-delete: # event
+          dto: ShortsRecommentUpdateEvent
+        shorts-recomment-delete: # event
           name: ${spring.profiles.active:default}-short-recomment-deleted
-          dto: ShortRecommentDeleteEvent
+          dto: ShortsRecommentDeleteEvent
     sub: # member-read-service
       group-id: ${spring.profiles.active:default}-comment-read-group
