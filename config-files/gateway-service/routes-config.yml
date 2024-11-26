@@ -154,5 +154,37 @@ spring:
           filters:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
+            
+          ### Chat-Service
+        - id: chat-service
+          uri: lb://CHAT-SERVICE
+          predicates:
+            - Path=/chat-service/**
+          filters:
+            - StripPrefix=1
 
-        ### -SERVICE ###
+        # JWT Needed
+        - id: chat-service
+          uri: lb://CHAT-SERVICE
+          predicates:
+            - Path=/chat-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+            
+          ### Reward-Service#
+        - id: reward-service
+          uri: lb://REWARD-SERVICE
+          predicates:
+            - Path=/reward-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: reward-service
+          uri: lb://REWARD-SERVICE
+          predicates:
+            - Path=/reward-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
