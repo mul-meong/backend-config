@@ -42,3 +42,45 @@ event:
           dto: UpdateFeedStatusEvent
     sub:  # feed-read-service
       group-id: ${spring.profiles.active:default}-feed-read-group
+
+  comment:
+    pub:
+      topics:
+        feed-comment-create: # event
+          name: ${spring.profiles.active:default}-feed-comment-created
+          dto: FeedCommentCreateEvent # 이름 참고용 DTO, 세부 필드는 Figma 참고
+        feed-comment-update: # event
+          name: ${spring.profiles.active:default}-feed-comment-updated
+          dto: FeedCommentUpdateEvent
+        feed-comment-delete: # event
+          name: ${spring.profiles.active:default}-feed-comment-deleted
+          dto: FeedCommentDeleteEvent
+        feed-recomment-create: # event
+          name: ${spring.profiles.active:default}-feed-recomment-created
+          dto: FeedRecommentCreateEvent 
+        feed-recomment-update: # event
+          name: ${spring.profiles.active:default}-feed-recomment-updated
+          dto: FeedRecommentUpdateEvent
+        feed-recomment-delete: # event
+          name: ${spring.profiles.active:default}-feed-recomment-deleted
+          dto: FeedRecommentDeleteEvent
+        short-comment-create: # event
+          name: ${spring.profiles.active:default}-short-comment-created
+          dto: ShortCommentCreateEvent 
+        short-comment-update: # event
+          name: ${spring.profiles.active:default}-short-comment-updated
+          dto: ShortCommentUpdateEvent
+        short-comment-delete: # event
+          name: ${spring.profiles.active:default}-short-comment-deleted
+          dto: ShortCommentDeleteEvent
+        short-recomment-create: # event
+          name: ${spring.profiles.active:default}-short-recomment-created
+          dto: ShortRecommentCreateEvent
+        short-recomment-update: # event
+          name: ${spring.profiles.active:default}-short-recomment-updated
+          dto: ShortRecommentUpdateEvent
+        short-recomment-delete: # event
+          name: ${spring.profiles.active:default}-short-recomment-deleted
+          dto: ShortRecommentDeleteEvent
+    sub: # member-read-service
+      group-id: ${spring.profiles.active:default}-comment-read-group
