@@ -24,3 +24,8 @@ springdoc:
         name: "Comment Read Service API"
       - url: "/contest-service/v3/api-docs"
         name: "Contest Service API"
+      - url: "/reward-service/v3/api-docs"
+        name: "Reward Service API"
+      - url: "/chat-service/v3/api-docs"
+        name: "Chat Service API"
+
