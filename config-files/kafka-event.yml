@@ -101,10 +101,10 @@ event:
     pub:
       topics:
         member-badge-create:
-          name: ${spring.profiles.active:default}-badge-created
-          dto: BadgeCreateEvent
+          name: ${spring.profiles.active:default}-member-badge-created
+          dto: MemberBadgeCreateEvent
         member-badge-update:
-          name: ${spring.profiles.active:default}-badge-updated
-          dto: BadgeUpdateEvent
+          name: ${spring.profiles.active:default}-member-badge-updated
+          dto: MemberBadgeUpdateEvent
     sub:
       group-id: ${spring.profiles.active:default}-badge-read-group
