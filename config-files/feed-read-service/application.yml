@@ -25,6 +25,8 @@ spring:
 
   kafka:
     bootstrap-servers: kafka-primary:19092,kafka-secondary:19092,kafka-backup:19092
+    consumer:
+      group-id: feed-read-group
 
 eureka:
   instance:
