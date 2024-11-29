@@ -17,7 +17,7 @@ spring:
   kafka:
     bootstrap-servers: kafka-primary:19092, kafka-secondary:19092, kafka-backup:19092
     consumer:
-      group-id:   comment-read-group
+      group-id: comment-read-group
       
   jpa:
     hibernate:
