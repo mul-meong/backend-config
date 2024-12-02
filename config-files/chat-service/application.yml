@@ -25,6 +25,8 @@ spring:
       host: "{cipher}ae016d0f02b9bd622fc8aecbc3641028d5234ba3b8ae7d12ca3ee9432c7e4e54"
       port: 6379
       password: "{cipher}710142fef4d9b369d5d250abad029544616dae3b0237c2fedf059b0af60a27c5"
+  kafka:
+    bootstrap-servers: kafka-primary:19092,kafka-secondary:19092,kafka-backup:19092
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
