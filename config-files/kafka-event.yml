@@ -158,6 +158,12 @@ event:
         follow-create:
           name: ${spring.profiles.active:default}-follow-created
           dto: FollowCreateEvent
+        feed-create-followers:
+          name: ${spring.profiles.active:default}-feed-created-followers
+          dto: FeedCreatedFollowersEvent
+        shorts-create-followers:
+          name: ${spring.profiles.active:default}-shorts-created-followers
+          dto: ShortsCreatedFollowersEvent
   #신고 도메인
   report:
     pub:
