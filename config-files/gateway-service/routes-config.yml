@@ -3,32 +3,25 @@ spring:
     gateway:
       routes:
         ### MEMBER-SERVICE ###
-        - id: member-service  # 서비스 이름
+        # JWT Needed
+        - id: member-service-auth # 서비스 이름
           uri: lb://MEMBER-SERVICE # 로드밸런서: MEMBER-SERVICE 서비스로 요청 라우팅(Eureka에 등록된 서비스 이름)
           predicates:
-            - Path=/member-service/** # ({port}/member-service/**)로 들어오는 요청을 라우팅
+            - Path=/member-service/auth/** # ({port}/member-service/**)로 들어오는 요청을 라우팅
           filters:
             - StripPrefix=1 # /**-service/api/v1 -> /api/v1로 변경(첫번째 세그먼트 제거)
+            - name: JwtAuthenticationFilter # JWT 필터 적용
 
-        # JWT Needed
         - id: member-service
           uri: lb://MEMBER-SERVICE
           predicates:
-            - Path=/member-service/auth/**
+            - Path=/member-service/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter
 
         ### FEED-SERVICE ###
-        - id: feed-service
-          uri: lb://FEED-SERVICE
-          predicates:
-            - Path=/feed-service/**
-          filters:
-            - StripPrefix=1 #
-
         # JWT Needed
-        - id: feed-service
+        - id: feed-service-auth
           uri: lb://FEED-SERVICE
           predicates:
             - Path=/feed-service/auth/**
@@ -36,16 +29,16 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-        ### COMMENT-SERVICE ###
-        - id: comment-service
-          uri: lb://COMMENT-SERVICE
+        - id: feed-service
+          uri: lb://FEED-SERVICE
           predicates:
-            - Path=/comment-service/**
+            - Path=/feed-service/**
           filters:
             - StripPrefix=1
 
+        ### COMMENT-SERVICE ###
         # JWT Needed
-        - id: comment-service
+        - id: comment-service-auth
           uri: lb://COMMENT-SERVICE
           predicates:
             - Path=/comment-service/auth/**
@@ -53,16 +46,16 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-        ### UTILITY-SERVICE ###
-        - id: utility-service
-          uri: lb://UTILITY-SERVICE
+        - id: comment-service
+          uri: lb://COMMENT-SERVICE
           predicates:
-            - Path=/utility-service/**
+            - Path=/comment-service/**
           filters:
             - StripPrefix=1
 
+        ### UTILITY-SERVICE ###
         # JWT Needed
-        - id: utility-service
+        - id: utility-service-auth
           uri: lb://UTILITY-SERVICE
           predicates:
             - Path=/utility-service/auth/**
@@ -70,16 +63,16 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-        ### ADMIN-SERVICE ###
-        - id: admin-service
-          uri: lb://ADMIN-SERVICE
+        - id: utility-service
+          uri: lb://UTILITY-SERVICE
           predicates:
-            - Path=/admin-service/**
+            - Path=/utility-service/**
           filters:
             - StripPrefix=1
 
+        ### ADMIN-SERVICE ###
         # JWT Needed
-        - id: admin-service
+        - id: admin-service-auth
           uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin-service/auth/**
@@ -87,16 +80,16 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-        ### Member-Read-SERVICE ###
-        - id: member-read-service
-          uri: lb://MEMBER-READ-SERVICE
+        - id: admin-service
+          uri: lb://ADMIN-SERVICE
           predicates:
-            - Path=/member-read-service/**
+            - Path=/admin-service/**
           filters:
             - StripPrefix=1
 
+        ### Member-Read-SERVICE ###
         # JWT Needed
-        - id: member-read-service
+        - id: member-read-service-auth
           uri: lb://MEMBER-READ-SERVICE
           predicates:
             - Path=/member-read-service/auth/**
@@ -104,16 +97,16 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-        ### Feed-Read-SERVICE ###
-        - id: feed-read-service
-          uri: lb://FEED-READ-SERVICE
+        - id: member-read-service
+          uri: lb://MEMBER-READ-SERVICE
           predicates:
-            - Path=/feed-read-service/**
+            - Path=/member-read-service/**
           filters:
             - StripPrefix=1
 
+        ### Feed-Read-SERVICE ###
         # JWT Needed
-        - id: feed-read-service
+        - id: feed-read-service-auth
           uri: lb://FEED-READ-SERVICE
           predicates:
             - Path=/feed-read-service/auth/**
@@ -121,16 +114,16 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-          ### Comment-Read-SERVICE ###
-        - id: comment-read-service
-          uri: lb://COMMENT-READ-SERVICE
+        - id: feed-read-service
+          uri: lb://FEED-READ-SERVICE
           predicates:
-            - Path=/comment-read-service/**
+            - Path=/feed-read-service/**
           filters:
             - StripPrefix=1
 
+        ### Comment-Read-SERVICE ###
         # JWT Needed
-        - id: comment-read-service
+        - id: comment-read-service-auth
           uri: lb://COMMENT-READ-SERVICE
           predicates:
             - Path=/comment-read-service/auth/**
@@ -138,7 +131,23 @@ spring:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
 
-          ### Contest-Service#
+        - id: comment-read-service
+          uri: lb://COMMENT-READ-SERVICE
+          predicates:
+            - Path=/comment-read-service/**
+          filters:
+            - StripPrefix=1
+
+        ### Contest-Service ###
+        # JWT Needed
+        - id: contest-service-auth
+          uri: lb://CONTEST-SERVICE
+          predicates:
+            - Path=/contest-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
         - id: contest-service
           uri: lb://CONTEST-SERVICE
           predicates:
@@ -146,16 +155,16 @@ spring:
           filters:
             - StripPrefix=1
 
+        ### Chat-Service ###
         # JWT Needed
-        - id: contest-service
-          uri: lb://CONTEST-SERVICE
+        - id: chat-service-auth
+          uri: lb://CHAT-SERVICE
           predicates:
-            - Path=/contest-service/auth/**
+            - Path=/chat-service/auth/**
           filters:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
-            
-          ### Chat-Service
+
         - id: chat-service
           uri: lb://CHAT-SERVICE
           predicates:
@@ -163,16 +172,17 @@ spring:
           filters:
             - StripPrefix=1
 
+            
+        ### Reward-Service ###
         # JWT Needed
-        - id: chat-service
-          uri: lb://CHAT-SERVICE
+        - id: reward-service-auth
+          uri: lb://REWARD-SERVICE
           predicates:
-            - Path=/chat-service/auth/**
+            - Path=/reward-service/auth/**
           filters:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
-            
-          ### Reward-Service#
+
         - id: reward-service
           uri: lb://REWARD-SERVICE
           predicates:
@@ -180,11 +190,3 @@ spring:
           filters:
             - StripPrefix=1
 
-        # JWT Needed
-        - id: reward-service
-          uri: lb://REWARD-SERVICE
-          predicates:
-            - Path=/reward-service/auth/**
-          filters:
-            - StripPrefix=1
-            - name: JwtAuthenticationFilter
