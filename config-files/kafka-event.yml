@@ -28,19 +28,19 @@ event:
       topics:
         feed-create:
           name: ${spring.profiles.active:default}-feed-created
-          dto: CreateFeedEvent
+          dto: FeedCreateEvent
         feed-delete:
           name: ${spring.profiles.active:default}-feed-deleted
-          dto: DeleteFeedEvent
+          dto: FeedDeleteEvent
         feed-update:
           name: ${spring.profiles.active:default}-feed-updated
-          dto: UpdateFeedEvent
+          dto: FeedUpdateEvent
         feed-hashtag-update:
           name: ${spring.profiles.active:default}-feed-hashtag-updated
-          dto: UpdateFeedHashtagEvent
+          dto: FeedHashtagUpdateEvent
         feed-status-update:
           name: ${spring.profiles.active:default}-feed-status-updated
-          dto: UpdateFeedStatusEvent
+          dto: FeedStatusUpdateEvent
     sub:  # feed-read-service
       group-id: ${spring.profiles.active:default}-feed-read-group
 
