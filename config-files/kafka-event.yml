@@ -108,3 +108,11 @@ event:
           dto: MemberBadgeUpdateEvent
     sub:
       group-id: ${spring.profiles.active:default}-badge-read-group
+      
+  # chat 도메인
+  chat:
+    pub:
+      topics:
+        chatbot-chatting-create: #확정x
+          name: ${spring.profiles.active:default}-chatbot-chatting-created
+          dto: ChatBotChattingCreateEvent
