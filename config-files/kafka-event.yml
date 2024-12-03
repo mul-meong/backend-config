@@ -114,6 +114,9 @@ event:
         contest-post-create:
           name: ${spring.profiles.active:default}-contest-post-created
           dto: ContestPostCreateEvent
+        contest-result:
+          name: ${spring.profiles.active:default}-contest-top
+          dto: ContestVoteResultEvent
     sub:
       group-id: ${spring.profiles.active:default}-contest-post-group
   
@@ -129,6 +132,7 @@ event:
           dto: MemberBadgeUpdateEvent
     sub:
       group-id: ${spring.profiles.active:default}-badge-read-group
+  
   member-grade: 
     pub:
       topics:
@@ -139,9 +143,28 @@ event:
   chat:
     pub:
       topics:
-        chatbot-chatting-create: #확정x
-          name: ${spring.profiles.active:default}-chatbot-chatting-created
-          dto: ChatBotChattingCreateEvent
         chatting-create: #발행 예정, 성광
           name: ${spring.profiles.active:default}-chatting-created
           dto: ChattingCreateEvent
+
+  #utility 도메인
+  utility:
+    pub:
+      topics:
+        like-create:
+          name: ${spring.profiles.active:default}-like-created
+          dto: LikeCreateEvent
+        follow-create:
+          name: ${spring.profiles.active:default}-follow-created
+          dto: FollowCreateEvent
+  #신고 도메인
+  report:
+    pub:
+      topics:
+        report-create:
+          name: ${spring.profiles.active:default}-report-created
+          dto: ReportCreateEvent
+  #알림 도메인
+  notification:
+    sub:
+      group-id: ${spring.profiles.active:default}-notification-group
