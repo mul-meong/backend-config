@@ -35,14 +35,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka-server:8516/eureka/
-      
-event:
-  chat:
-    pub:
-      topics:
-        chatbot-chatting-create:
-          name: ${spring.profiles.active:default}-chatbot-chatting-created
-          dto: ChatBotChattingCreateEvent
           
 API-KEY:
   key: ${API-KEY.key}
