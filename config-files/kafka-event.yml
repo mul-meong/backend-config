@@ -121,6 +121,9 @@ event:
       group-id: ${spring.profiles.active:default}-contest-post-group
   
   # Reward 도메인 - Badge, Grade
+  reward:
+    sub:
+      group-id: ${spring.profiles.active:default}-reward-group
   badge:
     pub:
       topics:
@@ -130,8 +133,6 @@ event:
         member-badge-update:
           name: ${spring.profiles.active:default}-member-badge-updated
           dto: MemberBadgeUpdateEvent
-    sub:
-      group-id: ${spring.profiles.active:default}-badge-read-group
   
   member-grade: 
     pub:
