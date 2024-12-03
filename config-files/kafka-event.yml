@@ -116,7 +116,7 @@ event:
     sub:
       group-id: ${spring.profiles.active:default}-contest-post-group
   
-  # Reward 도메인 - Badge
+  # Reward 도메인 - Badge, Grade
   badge:
     pub:
       topics:
@@ -131,7 +131,7 @@ event:
   member-grade: 
     pub:
       topics:
-        member-grade-update: # 발행 예정(12.03), 성광
+        member-grade-update: # 발행 예정, 성광
           name: ${spring.profiles.active:default}-member-grade-updated
           dto: MemberGradeUpdateEvent
   # chat 도메인
@@ -141,3 +141,6 @@ event:
         chatbot-chatting-create: #확정x
           name: ${spring.profiles.active:default}-chatbot-chatting-created
           dto: ChatBotChattingCreateEvent
+        chatting-create: #발행 예정, 성광
+          name: ${spring.profiles.active:default}-chatting-created
+          dto: ChattingCreateEvent
