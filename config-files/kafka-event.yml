@@ -43,7 +43,27 @@ event:
           dto: FeedStatusUpdateEvent
     sub:  # feed-read-service
       group-id: ${spring.profiles.active:default}-feed-read-group
-
+  # Shorts 도메인 // 발행 예정, 성광 추가(12.03)
+  shorts:
+    pub:
+      topics:
+        shorts-create:
+          name: ${spring.profiles.active:default}-shorts-created
+          dto: CreateShortsEvent
+        shorts-delete:
+          name: ${spring.profiles.active:default}-shorts-deleted
+          dto: DeleteShortsEvent
+        shorts-update:
+          name: ${spring.profiles.active:default}-shorts-updated
+          dto: UpdateShortsEvent
+        shorts-hashtag-update:
+          name: ${spring.profiles.active:default}-shorts-hashtag-updated
+          dto: UpdateShortsHashtagEvent
+        shorts-status-update:
+          name: ${spring.profiles.active:default}-shorts-status-updated
+          dto: UpdateShortsStatusEvent
+    sub:  # feed-read-service
+      group-id: ${spring.profiles.active:default}-shorts-read-group
   #Comment 도메인 : 너무 많아요;;;;
   comment:
     pub:
@@ -108,7 +128,12 @@ event:
           dto: MemberBadgeUpdateEvent
     sub:
       group-id: ${spring.profiles.active:default}-badge-read-group
-      
+  member-grade: 
+    pub:
+      topics:
+        member-grade-update: # 발행 예정(12.03), 성광
+          name: ${spring.profiles.active:default}-member-grade-updated
+          dto: MemberGradeUpdateEvent
   # chat 도메인
   chat:
     pub:
