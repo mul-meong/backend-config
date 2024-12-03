@@ -7,12 +7,3 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
-
-#set log level
-logging:
-  level:
-    root: info
-    org.hibernate.validator: info
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
-
