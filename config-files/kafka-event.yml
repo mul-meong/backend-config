@@ -110,9 +110,10 @@ event:
   #Contest 도메인
   contest:
     pub:
-      contest-post-create:
-        name: ${spring.profiles.active:default}-contest-post-created
-        dto: ContestPostCreateEvent
+      topics:
+        contest-post-create:
+          name: ${spring.profiles.active:default}-contest-post-created
+          dto: ContestPostCreateEvent
     sub:
       group-id: ${spring.profiles.active:default}-contest-post-group
   
