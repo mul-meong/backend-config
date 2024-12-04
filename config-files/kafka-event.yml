@@ -113,12 +113,18 @@ event:
   contest:
     pub:
       topics:
-        contest-post-create:
-          name: ${spring.profiles.active:default}-contest-post-created
-          dto: ContestPostCreateEvent
+        contest-vote-update:
+          name: ${spring.profiles.active:default}-contest-vote-updated
+          dto: ContestVoteRenewEvent
+        contest-vote-record:
+          name: ${spring.profiles.active:default}-contest-vote-recorded
+          dto: ContestVoteRecordEvent
         contest-result:
           name: ${spring.profiles.active:default}-contest-top
           dto: ContestVoteResultEvent
+        contest-status-alter:
+          name: ${spring.profiles.active:default}-contest-status-alt
+          dto: ContestStatusEvent
     sub:
       group-id: ${spring.profiles.active:default}-contest-post-group
   
