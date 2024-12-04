@@ -36,8 +36,6 @@ jwt:
 #로그 설정
 logging:
   level:
-    root: DEBUG
-    # 지정된 로거의 레벨
-    org.hibernate.validator: DEBUG
+    root: INFO
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
