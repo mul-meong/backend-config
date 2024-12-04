@@ -16,12 +16,18 @@ springdoc:
         name: "Utility Service API"
       - url: "/admin-service/v3/api-docs"
         name: "Admin Service API"
+      - url: "/shorts-service/v3/api-docs"
+        name: "Shorts Service API"
+
       - url: "/member-read-service/v3/api-docs"
         name: "Member Read Service API"
       - url: "/feed-read-service/v3/api-docs"
         name: "Feed Read Service API"
       - url: "/comment-read-service/v3/api-docs"
         name: "Comment Read Service API"
+      - url: "/shorts-read-service/v3/api-docs"
+        name: "Shorts Read Service API"
+        
       - url: "/contest-service/v3/api-docs"
         name: "Contest Service API"
       - url: "/reward-service/v3/api-docs"
