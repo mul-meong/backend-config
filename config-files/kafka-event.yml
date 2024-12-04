@@ -43,8 +43,8 @@ event:
           dto: FeedStatusUpdateEvent
     sub:  # feed-read-service
       group-id: ${spring.profiles.active:default}-feed-read-group
-  # Shorts 도메인 
-  # 추후 개발시 아래 토픽명, DTO를 사용해주세요. (개발후 본 코멘트 삭제)
+
+  # Shorts 도메인
   shorts:
     pub:
       topics:
@@ -63,8 +63,9 @@ event:
         shorts-status-update:
           name: ${spring.profiles.active:default}-shorts-status-updated
           dto: ShortsStatusUpdateEvent
-    sub:  # feed-read-service
+    sub:  # shorts-read-service
       group-id: ${spring.profiles.active:default}-shorts-read-group
+      
   #Comment 도메인
   comment:
     pub:
