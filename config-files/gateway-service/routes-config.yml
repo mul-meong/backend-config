@@ -138,6 +138,23 @@ spring:
           filters:
             - StripPrefix=1
 
+        ### Shorts-Read-SERVICE ###
+        # JWT Needed
+        - id: shorts-read-service-auth
+          uri: lb://SHORTS-READ-SERVICE
+          predicates:
+            - Path=/shorts-read-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        - id: shorts-read-service
+          uri: lb://SHORTS-READ-SERVICE
+          predicates:
+            - Path=/shorts-read-service/**
+          filters:
+            - StripPrefix=1
+
         ### Contest-Service ###
         # JWT Needed
         - id: contest-service-auth
@@ -190,3 +207,19 @@ spring:
           filters:
             - StripPrefix=1
 
+        ### SHORTS-SERVICE ###
+        - id: shorts-service
+          uri: lb://SHORTS-SERVICE
+          predicates:
+            - Path=/shorts-service/**
+          filters:
+            - StripPrefix=1
+
+        # JWT Needed
+        - id: shorts-service-auth
+          uri: lb://SHORTS-SERVICE
+          predicates:
+            - Path=/shorts-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter # JWT 인증 필터 적용
