@@ -125,6 +125,9 @@ event:
         contest-status-alter:
           name: ${spring.profiles.active:default}-contest-status-alt
           dto: ContestStatusEvent
+        contest-post-create:
+          name: ${spring.profiles.active:default}-contest-post-created
+          dto: ContestPostCreateEvent
     sub:
       group-id: ${spring.profiles.active:default}-contest-post-group
   
