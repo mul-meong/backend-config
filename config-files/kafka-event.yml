@@ -145,7 +145,7 @@ event:
           name: ${spring.profiles.active:default}-member-badge-updated
           dto: MemberBadgeUpdateEvent
   
-  member-grade: 
+  grade: 
     pub:
       topics:
         member-grade-update: # 발행 예정, 성광
