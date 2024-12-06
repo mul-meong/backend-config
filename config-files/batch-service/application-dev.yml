@@ -8,7 +8,7 @@ mongodb:
 
 spring:
   application:
-    name: batch-service
+    name: batch-server
 
   dataSource:
     contest:
