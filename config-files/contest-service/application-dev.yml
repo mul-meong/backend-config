@@ -13,10 +13,6 @@ spring:
     username: "{cipher}876532613553ec861fdad2a10e7f4be2682e0845b8513d2ed09f5b9f34f63c90"
     password: "{cipher}e2b85d7788b9f4330a8a552026592f5e2f2003475abd19d97971145f5b2da72558ad63bd423c9cb80d8d88f41a434189"
     driver-class-name: com.mysql.cj.jdbc.Driver
-  data:
-    mongodb:
-      uri: "${mongodb.encrypted-uri}${mongodb.base}"
-      auto-index-creation: true
 
   jpa:
     hibernate:
