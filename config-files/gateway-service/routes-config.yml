@@ -222,4 +222,4 @@ spring:
             - Path=/shorts-service/auth/**
           filters:
             - StripPrefix=1
-            - name: JwtAuthenticationFilter # JWT 인증 필터 적용
+            - name: JwtAuthenticationFilter
