@@ -24,3 +24,6 @@ jwt:
   tokenPrefix: "Bearer "
   accessTokenPrefix: "Authorization"
   refreshTokenPrefix: "X-Refresh-Token"
+
+defaultProfileImage:
+  url: "image/198af19d-bbc6-4252-a632-d1a1ccd5c659.webp"
