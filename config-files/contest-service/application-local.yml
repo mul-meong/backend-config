@@ -35,6 +35,8 @@ spring:
 
   kafka:
     bootstrap-servers: "{cipher}a0ea7fa7614decbb52dca73ba151276b0038ab37fb82fcc63776a2bb407b8a9954ad6c97c9e9e7d65cbc442e9210e829675f016cbe2d9311b1a657dd1abe312b6691fd7b4341e1310f83061909ca44be"
+    consumer:
+      group-id: contest
 
 eureka:
   instance:
