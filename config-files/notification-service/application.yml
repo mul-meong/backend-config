@@ -36,10 +36,10 @@ eureka:
       defaultZone: http://eureka-server:8516/eureka/
 api:
   member-read-service:
-    url: https://api.qua.world/member-read-service/v1
+    url: http://member-read-service/v1
   comment-service:
-    url: https://api.qua.world/comment-service/v1
+    url: http://comment-service/v1
   feed-read-service:
-    url: https://api.qua.world/feed-read-service/v1
+    url: http://feed-read-service/v1
   shorts-read-service:
-    url: https://api.qua.world/shorts-read-service/v1
+    url: http://shorts-read-service/v1
