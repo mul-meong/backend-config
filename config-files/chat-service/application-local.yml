@@ -35,7 +35,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka-server:8516/eureka/
+      defaultZone: http://localhost:8516/eureka/
 
 API-KEY:
   key: "{cipher}798106c5fea74a29552e3abc020873539509a44179e99986266ae149600b3b9bea8c0810bfadba16a061ab643f18a10055669e27d0a15f3379c60575fb8a0695b04b5a9932f2fecc2f1ecaec71cd204756b614bece28c6b8873f83491f4bb879b0d2198fb16dc36767351585a8032dfc6106eebdf6cf42cc83ff19d781c3076b998aa0a9c0c2c2c735266eddea9f1a431887e9dd88fc40283f2d93400b7e55fb69bdf0399360afc1d60a11c650d60bb7a1fe2d29a81264506a1fe719143cf15f"
