@@ -2,7 +2,7 @@ server:
   port: 25676
 
 mongodb:
-  encrypted-uri: "{cipher}4c2437e12cbac1fef39e51d77da52ea9dd382f1c1c649d9789d66fac09e4e1c2ce4c6ee79d334720467789bac81caabae5fc9ebf82212192687bd30a70960f54aa467e6512e1d25943b7b6561914d10d4f3cf8a8c3eb410652bfa0e7490267f0"
+  encrypted-uri: "{cipher}a517cc0cd2e3d64f9a4a9ae03d15743aab0aca07131f9aebe85219010a2d50ff78e4590f7da8bcd516bbc04e3da3fa7d04dfb32012c7a01d4a5f92b18950122b178f28943790e0eda5eb9e14f0b05013"
   base: "/chat_db?replicaSet=rs0&authSource=admin"
 
 spring:
@@ -22,12 +22,11 @@ spring:
           max-active: 10
           max-idle: 10
           min-idle: 2
-      host: "{cipher}ae016d0f02b9bd622fc8aecbc3641028d5234ba3b8ae7d12ca3ee9432c7e4e54"
-      port: 6379
+      host: "{cipher}ca9a8f9c2411856993261468371f76cb789d803b3a1d799310535dc72e03281a"
+      port: 7379
       password: "{cipher}710142fef4d9b369d5d250abad029544616dae3b0237c2fedf059b0af60a27c5"
   kafka:
     bootstrap-servers: "{cipher}a0ea7fa7614decbb52dca73ba151276b0038ab37fb82fcc63776a2bb407b8a9954ad6c97c9e9e7d65cbc442e9210e829675f016cbe2d9311b1a657dd1abe312b6691fd7b4341e1310f83061909ca44be"
-
 
 eureka:
   instance:
