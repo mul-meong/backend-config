@@ -19,6 +19,10 @@ spring:
     mongodb:
       uri: "${mongodb.encrypted-uri}${mongodb.base}"
       auto-index-creation: true
+  elasticsearch:
+    username: "{cipher}58c3d64825cc362237f387e0e0ca62b0d1cca4b8d1b7b120b2fe120425286851"
+    password: "{cipher}08d4bd112a4136c6d441122225053f3146a9cbad2b03d0c5fd324d0a3ad37d5b"
+    uris: "{cipher}fddda5cfbcd24854e7f311d971bede4b43582149d605bb9fd70675a56896b38663fbf41575fb4cf99ad66f917c9c8cdb"
 
   jpa:
     hibernate:

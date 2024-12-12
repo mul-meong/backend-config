@@ -25,9 +25,9 @@ spring:
       auto-index-creation: true
       
   elasticsearch:
-    username: "{cipher}de6979422d750b8d8e3a5b8ed0f676e659c2f702c56926145b119709f3993ff7"
-    password: "{cipher}193bf96db3c65dccea2ae4b5e018d2b2a58be2d35aacf584d7e9ad406ecb4645"
-    uris: "{cipher}1df95f9f998d57d333836c3d803be5e32bdd50df800c52022804750f4570a926279d561091e04724202a91a9153c9059"
+    username: "{cipher}58c3d64825cc362237f387e0e0ca62b0d1cca4b8d1b7b120b2fe120425286851"
+    password: "{cipher}08d4bd112a4136c6d441122225053f3146a9cbad2b03d0c5fd324d0a3ad37d5b"
+    uris: "{cipher}1eee9b7351cf34f33be7383952410db9169a1d0304e325983275e9bf74ed2b4144119439caa1777c9f206c7d410cf3a0"
 
   jpa:
     hibernate:
