@@ -27,7 +27,7 @@ spring:
   elasticsearch:
     username: "{cipher}58c3d64825cc362237f387e0e0ca62b0d1cca4b8d1b7b120b2fe120425286851"
     password: "{cipher}08d4bd112a4136c6d441122225053f3146a9cbad2b03d0c5fd324d0a3ad37d5b"
-    uris: "{cipher}1eee9b7351cf34f33be7383952410db9169a1d0304e325983275e9bf74ed2b4144119439caa1777c9f206c7d410cf3a0"
+    uris: "{cipher}ad34fbc5d6bb0770cdf5d05c6ddb5fa003a82eabe10e1ab3216d1dfb1f6094498ef0aa05fb20b6b9172fbaf78633cfca"
 
   jpa:
     hibernate:
