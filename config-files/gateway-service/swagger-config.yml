@@ -30,6 +30,8 @@ springdoc:
 
       - url: "/contest-service/v3/api-docs"
         name: "Contest Service API"
+      - url: "/contest-read-service/v3/api-docs"
+        name: "Contest Read Service API"
       - url: "/reward-service/v3/api-docs"
         name: "Reward Service API"
       - url: "/chat-service/v3/api-docs"
