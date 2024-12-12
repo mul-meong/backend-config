@@ -172,6 +172,23 @@ spring:
           filters:
             - StripPrefix=1
 
+        ### Contest-Read-SERVICE ###
+        # JWT Needed
+        - id: contest-read-service-auth
+          uri: lb://CONTEST-READ-SERVICE
+          predicates:
+            - Path=/contest-read-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
+
+        - id: contest-read-service
+          uri: lb://CONTEST-READ-SERVICE
+          predicates:
+            - Path=/contest-read-service/**
+          filters:
+            - StripPrefix=1
+
         ### Chat-Service ###
         # JWT Needed
         - id: chat-service-auth
