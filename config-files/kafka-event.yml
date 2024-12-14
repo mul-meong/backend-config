@@ -175,6 +175,9 @@ event:
         shorts-create-followers:
           name: ${spring.profiles.active:default}-shorts-created-followers
           dto: ShortsCreatedFollowersEvent
+        follow-create:
+          name: ${spring.profiles.active:default}-follow-created
+          dto: FollowCreateEvent
   #신고 도메인 #구현 필요
   report:
     pub:
