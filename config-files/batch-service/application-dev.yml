@@ -3,21 +3,22 @@ Server:
 
 mongodb:
   encrypted-uri: "{cipher}a517cc0cd2e3d64f9a4a9ae03d15743aab0aca07131f9aebe85219010a2d50ff78e4590f7da8bcd516bbc04e3da3fa7d04dfb32012c7a01d4a5f92b18950122b178f28943790e0eda5eb9e14f0b05013"
-  qua_util: "/local_qua_util?authSource=admin"
-  qua_contest: "/local_qua_contest?authSource=admin"
+  qua_utility: "/utility_db?replicaSet=rs0&authSource=admin"
+  qua_contest: "/contest_read_db?replicaSet=rs0&authSource=admin"
+  qua_feed: "/feed_read_db?replicaSet=rs0&authSource=admin"
+  qua_shorts: "/shorts_read_db?replicaSet=rs0&authSource=admin"
+  qua_comment: "/comment_read_db?replicaSet=rs0&authSource=admin"
 
 spring:
   application:
     name: batch-server
+  batch:
+    jdbc:
+      initialize-schema: always
 
   dataSource:
     contest:
-      url: jdbc:mysql://qua-rdb/contest_db
-      username: "{cipher}876532613553ec861fdad2a10e7f4be2682e0845b8513d2ed09f5b9f34f63c90"
-      password: "{cipher}e2b85d7788b9f4330a8a552026592f5e2f2003475abd19d97971145f5b2da72558ad63bd423c9cb80d8d88f41a434189"
-      driver-class-name: com.mysql.cj.jdbc.Driver
-    feed:
-      url: jdbc:mysql://qua-rdb/feed_db
+      jdbc-url: jdbc:mysql://qua-rdb/contest_db
       username: "{cipher}876532613553ec861fdad2a10e7f4be2682e0845b8513d2ed09f5b9f34f63c90"
       password: "{cipher}e2b85d7788b9f4330a8a552026592f5e2f2003475abd19d97971145f5b2da72558ad63bd423c9cb80d8d88f41a434189"
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,13 +26,34 @@ spring:
   data:
     mongodb:
       contest:
-        uri: "${mongodb.encrypted-uri}${mongodb.qua_contest}"
+        uri: "${mongodb.encrypted-uri}"
         dbname: qua_contest
         auto-index-creation: true
       utility:
-        uri: "${mongodb.encrypted-uri}${mongodb.qua_util}"
-        dbname: qua_util
+        uri: "${mongodb.encrypted-uri}"
+        dbname: qua_utility
         auto-index-creation: true
+      feed:
+        uri: "${mongodb.encrypted-uri}"
+        dbname: qua_feed
+        auto-index-creation: true
+      shorts:
+        uri: "${mongodb.encrypted-uri}"
+        dbname: qua_shorts
+        auto-index-creation: true
+      comment:
+        uri: "${mongodb.encrypted-uri}"
+        dbname: qua_comment
+        auto-index-creation: true
+    redis:
+      lettuce:
+        pool:
+          max-active: 10
+          max-idle: 10
+          min-idle: 2
+      host: "{cipher}ae016d0f02b9bd622fc8aecbc3641028d5234ba3b8ae7d12ca3ee9432c7e4e54"
+      port: 6379
+      password: "{cipher}710142fef4d9b369d5d250abad029544616dae3b0237c2fedf059b0af60a27c5"
 
   jpa:
     hibernate:
@@ -47,12 +69,3 @@ spring:
     bootstrap-servers: kafka-primary:19092,kafka-secondary:19092,kafka-backup:19092
     consumer:
       group-id: batch-server
-
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://eureka-server:8516/eureka/
