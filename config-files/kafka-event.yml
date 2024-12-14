@@ -166,9 +166,12 @@ event:
         like-create:
           name: ${spring.profiles.active:default}-like-created
           dto: LikeCreateEvent
-        dislike-create:
-          name: ${spring.profiles.active:default}-dislike-created
-          dto: DislikeCreateEvent
+        like-renew-create:
+          name: ${spring.profiles.active:default}-like-renew-created
+          dto: LikeRenewCreateEvent
+        dislike-renew-create:
+          name: ${spring.profiles.active:default}-dislike-renew-created
+          dto: DislikeRenewCreateEvent
         feed-create-followers:
           name: ${spring.profiles.active:default}-feed-created-followers
           dto: FeedCreatedFollowersEvent
