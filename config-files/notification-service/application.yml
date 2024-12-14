@@ -38,7 +38,7 @@ api:
   member-read-service:
     url: http://member-read-service:27671
   comment-service:
-    url: http://comment-service:25675
+    url: http://comment-service:25673
   feed-read-service:
     url: http://feed-read-service:27670
   shorts-read-service:
