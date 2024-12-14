@@ -37,3 +37,6 @@ springdoc:
       - url: "/chat-service/v3/api-docs"
         name: "Chat Service API"
 
+      - url: "/batch-service/v3/api-docs"
+        name: "batch Service API"
+
