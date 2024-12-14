@@ -30,23 +30,23 @@ spring:
     mongodb:
       contest:
         uri: "${mongodb.encrypted-uri}"
-        dbname: ${mongodb.qua_contest}
+        database: ${mongodb.qua_contest}
         auto-index-creation: true
       utility:
         uri: "${mongodb.encrypted-uri}"
-        dbname: ${mongodb.qua_utility}
+        database: ${mongodb.qua_utility}
         auto-index-creation: true
       feed:
         uri: "${mongodb.encrypted-uri}"
-        dbname: ${mongodb.qua_feed}
+        database: ${mongodb.qua_feed}
         auto-index-creation: true
       shorts:
         uri: "${mongodb.encrypted-uri}"
-        dbname: ${mongodb.qua_shorts}
+        database: ${mongodb.qua_shorts}
         auto-index-creation: true
       comment:
         uri: "${mongodb.encrypted-uri}"
-        dbname: ${mongodb.qua_comment}
+        database: ${mongodb.qua_comment}
         auto-index-creation: true
     redis:
       lettuce:
