@@ -36,10 +36,10 @@ eureka:
       defaultZone: http://eureka-server:8516/eureka/
 api:
   member-read-service:
-    url: http://member-read-service/v1
+    url: member-read-service/v1
   comment-service:
-    url: http://comment-service/v1
+    url: comment-service/v1
   feed-read-service:
-    url: http://feed-read-service/v1
+    url: feed-read-service/v1
   shorts-read-service:
-    url: http://shorts-read-service/v1
+    url: shorts-read-service/v1
