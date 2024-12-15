@@ -12,9 +12,6 @@ mongodb:
 spring:
   application:
     name: batch-server
-  batch:
-    jdbc:
-      initialize-schema: always
 
   dataSource:
     url: jdbc:mysql://qua-rdb/contest_db
