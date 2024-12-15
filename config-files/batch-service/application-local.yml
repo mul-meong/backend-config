@@ -71,3 +71,12 @@ spring:
     bootstrap-servers: kafka-primary:19092,kafka-secondary:19092,kafka-backup:19092
     consumer:
       group-id: batch-server
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server:8516/eureka/
