@@ -257,3 +257,11 @@ spring:
           filters:
             - StripPrefix=1
             - name: JwtAuthenticationFilter
+
+        ### BATCH-SERVER ###
+        - id: batch-server
+          uri: lb://BATCH-SERVER
+          predicates:
+            - Path=/batch-sever/**
+          filters:
+            - StripPrefix=1
