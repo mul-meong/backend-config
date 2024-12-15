@@ -248,3 +248,11 @@ spring:
             - Path=/batch-service/**
           filters:
             - StripPrefix=1
+
+        ### NOTIFICATION-SERVICE ###
+        - id: notification-service
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification-service/**
+          filters:
+            - StripPrefix=1
