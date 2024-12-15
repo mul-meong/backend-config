@@ -256,3 +256,12 @@ spring:
             - Path=/notification-service/**
           filters:
             - StripPrefix=1
+
+        # JWT Needed
+        - id: notification-service-auth
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notification-service/auth/**
+          filters:
+            - StripPrefix=1
+            - name: JwtAuthenticationFilter
