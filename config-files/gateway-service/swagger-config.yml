@@ -40,6 +40,3 @@ springdoc:
       - url: "/notification-service/v3/api-docs"
         name: "Notification Service API"
 
-      - url: "/batch-service/v3/api-docs"
-        name: "batch Service API"
-
