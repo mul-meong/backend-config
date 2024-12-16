@@ -8,6 +8,7 @@ mongodb:
   qua_feed: "feed_read_db?replicaSet=rs0&authSource=admin"
   qua_shorts: "shorts_read_db?replicaSet=rs0&authSource=admin"
   qua_comment: "comment_read_db?replicaSet=rs0&authSource=admin"
+  qua_member: "member_read_db?replicaSet=rs0&authSource=admin"
 
 spring:
   application:
@@ -35,6 +36,9 @@ spring:
         auto-index-creation: true
       comment:
         uri: "${mongodb.encrypted-uri}/${mongodb.qua_comment}"
+        auto-index-creation: true
+      member:
+        uri: "${mongodb.encrypted-uri}/${mongodb.qua_member}"
         auto-index-creation: true
     redis:
       lettuce:
