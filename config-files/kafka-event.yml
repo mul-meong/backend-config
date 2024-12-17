@@ -181,6 +181,9 @@ event:
         follow-create:
           name: ${spring.profiles.active:default}-follow-created
           dto: FollowCreateEvent
+        unfollow:
+          name: ${spring.profiles.active:default}-unfollow
+          dto: UnfollowEvent
   #신고 도메인 #구현 필요
   report:
     pub:
