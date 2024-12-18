@@ -46,3 +46,11 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka-server:8516/eureka/
+
+api:
+  member-service:
+    url: "http://member-service:25671/v1"
+  utility-service:
+    url: "http://utility-service:25672/v1"
+  admin-service:
+    url: "http://utility-service:25674/v1"

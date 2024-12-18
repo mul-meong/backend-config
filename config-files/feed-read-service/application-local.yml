@@ -51,3 +51,11 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8516/eureka/
+
+api:
+  member-service:
+    url: "{cipher}b89d00e9fc9687f1e7dd2a4bf96119e288d2fc2aac5ab50c027a799ecb121c830ca6be48b0620115cd1519412303d639945f538d53c948ddd208ab1dc8458d00"
+  utility-service:
+    url: "{cipher}05acc4848488562b918902baaadac7fe11ac2b927a33fa5cbe9d8ec7cbc91f73e870836784eb7f9711ea71f66da309583ace33aab87c25aa5054dacf0be8b2f6"
+  admin-service:
+    url: "{cipher}65a3c8f686d5ebd13b28150698f77a312e791aaea96083949aecbdc7ec59134c9aaf1c4ff6da77a6b2e4f3e13a085afb4a9296dd27030ac3db47ca304f9f1f88"
