@@ -41,6 +41,9 @@ event:
         feed-status-update:
           name: ${spring.profiles.active:default}-feed-status-updated
           dto: FeedStatusUpdateEvent
+        feed-metrics-update:
+          name: ${spring.profiles.active:default}-feed-metrics-updated
+          dto: FeedMetricsUpdateEvent
     sub:  # feed-read-service
       group-id: ${spring.profiles.active:default}-feed-read-group
 
