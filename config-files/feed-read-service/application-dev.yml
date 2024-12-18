@@ -53,4 +53,4 @@ api:
   utility-service:
     url: "http://utility-service:25672/v1"
   admin-service:
-    url: "http://utility-service:25674/v1"
+    url: "http://admin-service:25674/v1"
